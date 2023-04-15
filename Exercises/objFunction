@@ -1,0 +1,21 @@
+let objToCopy = {
+  foo: 1,
+  bar: 2,
+  qux: 3,
+};
+
+const objCopy = (obj,arr)=> {
+  let output = {};
+  if(arr){
+    arr.forEach(el=>{
+      output[el] = obj[el];
+    });
+    return output;
+  }
+  else{
+    Object.assign(output,obj);
+  }
+  return output;
+}
+
+console.log(objCopy(objToCopy,['foo', 'qux']));
